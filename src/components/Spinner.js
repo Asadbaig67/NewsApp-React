@@ -7,8 +7,5 @@ export default class Spinner extends Component {
                 <img src={loading} alt="loading" />
             </div>
         )
-
-
     }
-
 }

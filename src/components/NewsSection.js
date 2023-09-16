@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Cards from './Cards'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types'
+// import InfiniteScroll from 'react-infinite-scroll-component';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 export default class NewsSection extends Component {
@@ -37,7 +38,7 @@ export default class NewsSection extends Component {
         let parsedData = await data.json();
         this.setState({ articles: parsedData.articles, total: parsedData.totalResults, loading: false });
 
-        
+
 
     }
     async componentDidMount() {
@@ -68,7 +69,7 @@ export default class NewsSection extends Component {
         return (
 
             <>
-                <h2 className='text-center my-5 '>DawnNews Top Headlines About - {this.props.Topic}</h2>
+                <h2 className='text-center ' style={{ marginTop: "70px" }}>DawnNews Top Headlines About - {this.props.Topic}</h2>
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
